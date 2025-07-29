@@ -1,0 +1,16 @@
+{
+  "enabled": true,
+  "name": "预览 Index HTML",
+  "description": "当用户在交谈窗口中输入\"预览\"时，自动用浏览器打开index.html文件",
+  "version": "1",
+  "when": {
+    "type": "userTriggered",
+    "patterns": [
+      "**/*"
+    ]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "用户在交谈中输入了\"预览\"，请用浏览器打开index.html文件。请执行以下操作：1. 找到项目根目录下的index.html文件 2. 使用系统默认浏览器打开该文件 3. 确认文件已成功在浏览器中打开"
+  }
+}

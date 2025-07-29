@@ -1,0 +1,78 @@
+{
+  "mcpServers": {
+    "ssh-remote": {
+      "command": "uvx",
+      "args": ["mcp-server-ssh@latest"],
+      "env": {
+        "FASTMCP_LOG_LEVEL": "INFO",
+        "SSH_DEFAULT_HOST": "192.168.139.131",
+        "SSH_DEFAULT_USER": "root",
+        "SSH_DEFAULT_PORT": "22"
+      },
+      "disabled": false,
+      "autoApprove": [
+        "ssh_connect",
+        "ssh_execute_command",
+        "ssh_upload_file",
+        "ssh_download_file",
+        "ssh_list_files",
+        "ssh_read_file",
+        "ssh_write_file"
+      ]
+    },
+    "system-tools": {
+      "command": "uvx",
+      "args": ["mcp-server-filesystem@latest"],
+      "disabled": false,
+      "autoApprove": [
+        "read_file",
+        "write_file",
+        "create_directory",
+        "list_directory"
+      ]
+    },
+    "brave-search": {
+      "command": "uvx",
+      "args": ["mcp-server-brave-search@latest"],
+      "env": {
+        "BRAVE_API_KEY": "your-brave-api-key-here"
+      },
+      "disabled": false,
+      "autoApprove": [
+        "brave_web_search",
+        "brave_local_search"
+      ]
+    },
+    "web-scraper": {
+      "command": "uvx",
+      "args": ["mcp-server-puppeteer@latest"],
+      "disabled": false,
+      "autoApprove": [
+        "scrape_url",
+        "screenshot_url",
+        "get_page_content"
+      ]
+    },
+    "tavily-search": {
+      "command": "uvx",
+      "args": ["mcp-server-tavily@latest"],
+      "env": {
+        "TAVILY_API_KEY": "your-tavily-api-key"
+      },
+      "disabled": false,
+      "autoApprove": [
+        "tavily_search",
+        "tavily_search_news"
+      ]
+    },
+    "duckduckgo-search": {
+      "command": "uvx",
+      "args": ["mcp-server-duckduckgo@latest"],
+      "disabled": false,
+      "autoApprove": [
+        "duckduckgo_search",
+        "duckduckgo_news"
+      ]
+    }
+  }
+}
